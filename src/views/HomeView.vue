@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import TheChart from '@/components/TheChart.vue'
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <TheChart style="width: 500px" />
 </template>
