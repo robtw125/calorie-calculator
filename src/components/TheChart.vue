@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type Ref, ref, shallowRef, computed, watch, nextTick } from 'vue'
+import { type Ref, ref, shallowRef, watch, nextTick } from 'vue'
 import { useDataStore } from '@/stores/data'
 import ApexCharts from 'apexcharts'
 
@@ -57,7 +57,6 @@ function syncChartData(data: Array<any>) {
 watch(
   () => dataStore.data,
   (newData) => {
-    console.log('Ye')
     if (newData.length <= 0) return
 
     syncChartData(newData)
@@ -76,5 +75,5 @@ watch(
 )
 </script>
 <template>
-  <div ref="chartElement"></div>
+  <div id="chart" ref="chartElement"></div>
 </template>

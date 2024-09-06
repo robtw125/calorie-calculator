@@ -1,3 +1,6 @@
+import { doc, deleteDoc } from 'firebase/firestore'
+import { db } from '@/controllers/firebase'
+
 export default class DataPoint {
   id: string
   userUid: string
@@ -21,5 +24,10 @@ export default class DataPoint {
 
   getDate(): string {
     return new Date(this.timestamp).toDateString()
+  }
+
+  delete = async () => {
+    const docRef = doc(db, 'data', this.id)
+    await deleteDoc(docRef)
   }
 }
